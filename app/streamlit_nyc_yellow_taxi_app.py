@@ -5,15 +5,15 @@ import geopandas as gpd
 import folium
 from folium import Choropleth, GeoJson
 from folium.features import GeoJsonTooltip
-from catboost import CatBoostRegressor
+from xgboost import XGBRegressor
 from branca.colormap import linear
 from datetime import datetime
 
 # Load model and shapefile
 @st.cache_resource
 def load_model_and_data():
-    model = CatBoostRegressor()
-    model.load_model("C:/Users/zarar/Desktop/ZDoc/Graduate Center/Big Data/Project/Deploy_StreamLit/catboost_model.cbm")  # Replace with your model path
+    model = XGBRegressor()
+    model.load_model("C:/Users/zarar/Desktop/ZDoc/Graduate Center/Big Data/Project/NYC-Taxi-A-Data-Science-Project/models/xgboost_model_yellow_taxi.json")  # Replace with your model path
     shapefile = gpd.read_file("C:/Users/zarar/Desktop/ZDoc/Graduate Center/Big Data/Project/Deploy_StreamLit/taxi_zones/taxi_zones.shp")  # Replace with your shapefile path
     return model, shapefile
 
