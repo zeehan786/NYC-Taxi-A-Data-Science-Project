@@ -5,6 +5,5 @@ folium==0.14.0
 branca==0.6.0
 xgboost==1.7.6
 shapely==2.0.1
-fiona==1.9.4
-pyproj==3.5.0
-rtree==1.0.1
+fiona==1.8.22  # Compatible with GDAL 2.x
+pyproj==3.4.1  # Compatible with Fiona 1.8.x
