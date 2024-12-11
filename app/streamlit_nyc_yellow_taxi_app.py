@@ -43,8 +43,8 @@ if day_of_week > 7:
     day_of_week = 1  # Wrap Sunday
 is_weekend = day_of_week in [1, 7]  # Sunday or Saturday
 
-# # Display the day of the week
-# st.write(f"Date: {selected_date.strftime('%B %d, %Y')} ({day_name_map[day_of_week]})")
+# Display the day of the week
+st.write(f"Date: {selected_date.strftime('%B %d, %Y')} ({day_name_map[day_of_week]})")
 
 # Prepare input features for all PULocationID
 all_pulocations = shapefile['OBJECTID'].unique()
