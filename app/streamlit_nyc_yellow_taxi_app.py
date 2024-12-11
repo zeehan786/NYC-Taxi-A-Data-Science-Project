@@ -49,9 +49,9 @@ st.write(f"Date: {selected_date.strftime('%B %d, %Y')} ({day_name_map[day_of_wee
 # Prepare input features for all PULocationID
 all_pulocations = shapefile['OBJECTID'].unique()
 input_features = pd.DataFrame({
-    'pickup_hour': [pickup_hour] * len(all_pulocations),    
-    'dayofmonth': [dayofmonth] * len(all_pulocations),
+    'pickup_hour': [pickup_hour] * len(all_pulocations),
     'month': [month] * len(all_pulocations),
+    'dayofmonth': [dayofmonth] * len(all_pulocations),
     'day_of_week': [day_of_week] * len(all_pulocations),
     'is_weekend': [int(is_weekend)] * len(all_pulocations),
     'PULocationID': all_pulocations,
