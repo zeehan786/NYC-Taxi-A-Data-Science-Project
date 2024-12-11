@@ -13,7 +13,7 @@ from datetime import datetime
 @st.cache_resource
 def load_model_and_data():
     model = XGBRegressor()
-    model.load_model("models/xgboost_model_lyft.json")  # Replace with your model path
+    model.load_model("models/xgboost_model_yellow_taxi.json")  # Replace with your model path
     shapefile = gpd.read_file("taxi_zones/taxi_zones.shp")  # Replace with your shapefile path
     return model, shapefile
 
@@ -28,7 +28,7 @@ airport_stations = {132, 138, 1, 186, 162, 100}
 day_name_map = {1: "Sunday", 2: "Monday", 3: "Tuesday", 4: "Wednesday", 5: "Thursday", 6: "Friday", 7: "Saturday"}
 
 # Title
-st.title("NYC Lyft Rides Demand Prediction")
+st.title("NYC Yellow Taxi Demand Prediction")
 st.sidebar.header("Input Features")
 
 # User inputs
