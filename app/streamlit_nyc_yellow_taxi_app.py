@@ -47,12 +47,12 @@ is_weekend = day_of_week in [1, 7]  # Sunday or Saturday
 # Prepare input features for all PULocationID
 all_pulocations = shapefile['OBJECTID'].unique()
 input_features = pd.DataFrame({
-    'PULocationID': all_pulocations,
+    'pickup_hour': [pickup_hour] * len(all_pulocations),
     'month': [month] * len(all_pulocations),
     'dayofmonth': [dayofmonth] * len(all_pulocations),
-    'pickup_hour': [pickup_hour] * len(all_pulocations),
     'day_of_week': [day_of_week] * len(all_pulocations),
-    'is_weekend': [int(is_weekend)] * len(all_pulocations),    
+    'is_weekend': [int(is_weekend)] * len(all_pulocations),
+    'PULocationID': all_pulocations,
     'is_weather_bad': [int(is_weather_bad)] * len(all_pulocations),
 })
 
@@ -92,7 +92,5 @@ geojson.add_to(nyc_map)
 colormap.add_to(nyc_map)
 
 # Display the map
-# st.write("### ")
-# Display the day of the week
-st.write(f"Heatmap of Predicted Lyft Rides Demand <br> Date: {selected_date.strftime('%B %d, %Y')} ({day_name_map[day_of_week]})", unsafe_allow_html=True)
+st.write("### Heatmap of Predicted Yellow Taxi Demand")
 st.components.v1.html(nyc_map._repr_html_(), height=600)
