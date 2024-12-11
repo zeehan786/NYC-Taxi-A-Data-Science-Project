@@ -49,3 +49,4 @@ urllib3
 win_inet_pton
 xyzservices
 zstandard==0.23.0
+xgboost==1.7.6
