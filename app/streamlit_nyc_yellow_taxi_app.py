@@ -27,7 +27,7 @@ airport_stations = {132, 138, 1, 186, 162, 100}
 day_name_map = {1: "Sunday", 2: "Monday", 3: "Tuesday", 4: "Wednesday", 5: "Thursday", 6: "Friday", 7: "Saturday"}
 
 # Title
-st.title("NYC Yellow Taxi Demand Prediction")
+st.title("NYC Yellow Taxi Demand Forecasting")
 st.sidebar.header("Input Features")
 
 # User inputs
