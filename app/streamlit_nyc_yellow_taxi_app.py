@@ -91,5 +91,5 @@ geojson.add_to(nyc_map)
 colormap.add_to(nyc_map)
 
 # Display the map
-st.write("### Heatmap of Predicted Yellow Taxi Demand")
+st.write(f"Heatmap of Predicted Yellow Taxi Demand <br> Date: {selected_date.strftime('%B %d, %Y')} ({day_name_map[day_of_week]})", unsafe_allow_html=True)
 st.components.v1.html(nyc_map._repr_html_(), height=600)
